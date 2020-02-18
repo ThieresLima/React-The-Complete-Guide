@@ -3,6 +3,7 @@ import styles from './Person.module.css'
 
 import Auxiliary from '../../../hoc/Auxiliary/Auxiliary';
 import WithClass from '../../../hoc/withClass';
+import PropTypes from 'prop-types';
 
 class Person extends Component {
     render() {
@@ -15,6 +16,13 @@ class Person extends Component {
             </Auxiliary>
         )
     }
+};
+
+Person.propTypes = {    // npm install --save prop-types
+    click: PropTypes.func,
+    name: PropTypes.string,
+    age: PropTypes.number,
+    changed: PropTypes.func
 };
 
 export default WithClass(Person, styles.Person);
