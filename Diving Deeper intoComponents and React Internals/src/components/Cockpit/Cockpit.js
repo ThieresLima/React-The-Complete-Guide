@@ -1,9 +1,11 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useContext } from 'react';
 
 import styles from './Cockpit.module.css';
+import AuthContext from '../../context/auth-context';
 
 const Cockpit = (props) => {
     const toggleBtnRef = useRef(null);
+    const authContext = useContext(AuthContext);
 
     useEffect(() => {
         console.log('[Cockpit.js] userEffect');
@@ -43,6 +45,7 @@ const Cockpit = (props) => {
             <p className={text.join(' ')}>This is really working!</p>
             <button ref={toggleBtnRef} className={btnColor}
                 onClick={props.clicked}>Switch</button>
+            <button onClick={authContext.login}>Log in</button>
         </div>
     )
 };
