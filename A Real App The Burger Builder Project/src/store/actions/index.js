@@ -4,4 +4,6 @@ export {
     initIngredients
 } from './burgerbuilder';
 
-export { } from './order';
+export {
+    purchaseBurgerStart
+} from './order';
